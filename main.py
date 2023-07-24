@@ -1,6 +1,6 @@
 #TASK 1
     #Create a Node class in package nodes which stores data and link to another node
-    #Then create a Singly Linked List class in package linkedlist
+    #Then create a Singly Linked List class in package linked list
     #Test with the list [1,3,4,5,6,8,7,9,2,22,15,55,45,23,24,26,28] by performing create, insertion and display methods and then other list operations
     #Test run the code using a main.py file
 
@@ -75,3 +75,4 @@ print("The Length of the node is: ", linked_list.length())
 
 
 
+    
