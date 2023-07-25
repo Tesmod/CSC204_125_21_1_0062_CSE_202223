@@ -1,4 +1,4 @@
-class Nodes:
+class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -18,7 +18,7 @@ class Queue:
 
 
     def Enqueue(self, data):
-        temp = Nodes(data)
+        temp = Node(data)
 
 
         if self.rear == None: #The queue is empty
@@ -27,6 +27,29 @@ class Queue:
 
         self.rear.next = temp
         self.rear = temp
+        
+    def dequeue(self):
+        if self.isEmpty():
+            return None
+        data = self.front.data
+        self.front = self.front.next
+        if self.front is None:
+            self.rear = None
+        return data
+    
+    def sort(self):
+        #To sort, the queue is first converted to an ordinary list
+        q_list = []
+        while not self.isEmpty():
+            element = self.dequeue()
+            q_list.append(element)
+            
+        #Sort list
+        q_list = sorted(q_list)
+        
+        #Add the sorted elements back into the queue
+        for element in q_list:
+            self.Enqueue(element)
 
     def display(self):
         temp2 = self.front
@@ -34,14 +57,31 @@ class Queue:
             print(temp2.data)
             temp2 = temp2.next
 
+            
+    
 #Create an object of the queue class
 q = Queue()
 
 #Call the enqueue function and pass the data 1
-q.Enqueue(1)
-q.Enqueue(2)
+q.Enqueue(9)
+q.Enqueue(8)
 q.Enqueue(3)
-q.Enqueue(4)
-q.Enqueue(5)
+q.Enqueue(6)
+q.Enqueue(1)
+
+q.display()
+
+print("Elements to dequeue are: ")
+dq = q.dequeue()
+print("Dequeued element: ", dq)
+
+print("Elements to dequeue are: ")
+dq = q.dequeue()
+print("Dequeued element: ", dq)
+
+print("Elements to dequeue are: ")
+dq = q.dequeue()
+print("Dequeued element: ", dq)
+
 
 q.display()
