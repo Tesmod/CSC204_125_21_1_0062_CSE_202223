@@ -1,5 +1,5 @@
 
-
+#FIRST FILE
 class Node:
     def __init__(self, data = None, next_node = None):
         self.data = data #initializes the data and the link to the next node which  are by default None

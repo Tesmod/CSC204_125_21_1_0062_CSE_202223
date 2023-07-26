@@ -1,4 +1,5 @@
-from queue import Queue
+#FIFTH FILE
+from queue1 import Queue
 
 q = Queue()
 q.Enqueue(9)
@@ -11,5 +12,5 @@ print("The data in the queue before sorting are: ")
 q.display()
 
 q.sort() 
-print("The sorted queue is then: ")
+print("The   sorted queue is then: ")
 q.display()
